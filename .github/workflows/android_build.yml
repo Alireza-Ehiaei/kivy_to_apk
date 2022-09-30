@@ -38,6 +38,8 @@ jobs:
           name: ${{ steps.split_armeabi-v7a.outputs._1 }}
           path: ${{ steps.buildozer_armeabi-v7a.outputs.filename }}
 
+      - run: rm -rf bin/*
+
 
 
 
