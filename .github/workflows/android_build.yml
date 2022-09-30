@@ -68,66 +68,66 @@ jobs:
 
 
 
-      - name: Build for x86
-        env:
-          APP_ANDROID_ARCHS: x86
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer_x86
+      # - name: Build for x86
+      #   env:
+      #     APP_ANDROID_ARCHS: x86
+      #   uses: ArtemSBulgakov/buildozer-action@v1
+      #   id: buildozer_x86
       
-      - uses: jungwinter/split@v2
-        id: split_x86
-        with:
-          msg: ${{ steps.buildozer_x86.outputs.filename }}
-          separator: "/"
+      # - uses: jungwinter/split@v2
+      #   id: split_x86
+      #   with:
+      #     msg: ${{ steps.buildozer_x86.outputs.filename }}
+      #     separator: "/"
 
-      - name: Upload x86 artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.split_x86.outputs._1 }}
-          path: ${{ steps.buildozer_x86.outputs.filename }}
-
-
+      # - name: Upload x86 artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ steps.split_x86.outputs._1 }}
+      #     path: ${{ steps.buildozer_x86.outputs.filename }}
 
 
 
 
-      - name: Build for x86_64
-        env:
-          APP_ANDROID_ARCHS: x86_64
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer_x86_64
+
+
+      # - name: Build for x86_64
+      #   env:
+      #     APP_ANDROID_ARCHS: x86_64
+      #   uses: ArtemSBulgakov/buildozer-action@v1
+      #   id: buildozer_x86_64
       
-      - uses: jungwinter/split@v2
-        id: split_x86_64
-        with:
-          msg: ${{ steps.buildozer_x86_64.outputs.filename }}
-          separator: "/"
+      # - uses: jungwinter/split@v2
+      #   id: split_x86_64
+      #   with:
+      #     msg: ${{ steps.buildozer_x86_64.outputs.filename }}
+      #     separator: "/"
 
-      - name: Upload x86_64 artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.split_x86_64.outputs._1 }}
-          path: ${{ steps.buildozer_x86_64.outputs.filename }}
-
-
+      # - name: Upload x86_64 artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ steps.split_x86_64.outputs._1 }}
+      #     path: ${{ steps.buildozer_x86_64.outputs.filename }}
 
 
 
 
-      - name: Build universal
-        env:
-          APP_ANDROID_ARCHS: armeabi-v7a, arm64-v8a, x86, x86_64
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer_universal
+
+
+      # - name: Build universal
+      #   env:
+      #     APP_ANDROID_ARCHS: armeabi-v7a, arm64-v8a, x86, x86_64
+      #   uses: ArtemSBulgakov/buildozer-action@v1
+      #   id: buildozer_universal
       
-      - uses: jungwinter/split@v2
-        id: split_universal
-        with:
-          msg: ${{ steps.buildozer_universal.outputs.filename }}
-          separator: "/"
+      # - uses: jungwinter/split@v2
+      #   id: split_universal
+      #   with:
+      #     msg: ${{ steps.buildozer_universal.outputs.filename }}
+      #     separator: "/"
 
-      - name: Upload universal artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.split_universal.outputs._1 }}
-          path: ${{ steps.buildozer_universal.outputs.filename }}
+      # - name: Upload universal artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ steps.split_universal.outputs._1 }}
+      #     path: ${{ steps.buildozer_universal.outputs.filename }}
