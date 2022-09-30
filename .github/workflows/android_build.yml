@@ -20,25 +20,25 @@ jobs:
 
 
       
-      - name: Build for armeabi-v7a
-        env:
-          APP_ANDROID_ARCHS: armeabi-v7a
-        uses: ArtemSBulgakov/buildozer-action@v1
-        id: buildozer_armeabi-v7a
+   #   - name: Build for armeabi-v7a
+     #   env:
+     #     APP_ANDROID_ARCHS: armeabi-v7a
+     #   uses: ArtemSBulgakov/buildozer-action@v1
+      #  id: buildozer_armeabi-v7a
       
-      - uses: jungwinter/split@v2
-        id: split_armeabi-v7a
-        with:
-          msg: ${{ steps.buildozer_armeabi-v7a.outputs.filename }}
-          separator: "/"
+      #- uses: jungwinter/split@v2
+   #     id: split_armeabi-v7a
+    #    with:
+     #     msg: ${{ steps.buildozer_armeabi-v7a.outputs.filename }}
+    #      separator: "/"
 
-      - name: Upload armeabi-v7a artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.split_armeabi-v7a.outputs._1 }}
-          path: ${{ steps.buildozer_armeabi-v7a.outputs.filename }}
+   #   - name: Upload armeabi-v7a artifacts
+    #    uses: actions/upload-artifact@v2
+      #  with:
+      #    name: ${{ steps.split_armeabi-v7a.outputs._1 }}
+      #    path: ${{ steps.buildozer_armeabi-v7a.outputs.filename }}
 
-      - run: rm -rf bin/*
+     # - run: rm -rf bin/*
 
 
 
